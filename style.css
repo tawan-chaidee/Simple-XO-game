@@ -1,0 +1,50 @@
+
+
+
+.col {
+    background: white;
+    align-items: center;
+    font-size: 80px;
+    padding: 30px;
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    font-weight: bold;
+}
+
+.heading1 {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 120px;
+    text-align: center;
+
+}
+
+#turn {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;
+    text-align: center;
+
+}
+
+#b1 {
+    font-weight: bold;
+    text-align: center;
+    font-size:50px;
+    display:none;
+    width: 20%;
+    border-radius: 1%;
+    background-color: black;
+    color: white;
+
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+
