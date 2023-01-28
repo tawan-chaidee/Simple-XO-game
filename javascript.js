@@ -39,9 +39,7 @@ function checkWin() {
 
             if (o[winCon[i][j]] != 1) {
                 break;
-            } else if (j == 2 ) {
-                
-            }
+            } 
 
             //If all 3 condition met, end game
             if (j == 2) {
@@ -99,7 +97,6 @@ function endGame(winCon) {
             col[i].onclick = false;
         }
     }
-
 
     if (winCon == null) {
         return
