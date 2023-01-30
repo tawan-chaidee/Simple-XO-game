@@ -1,6 +1,6 @@
 
 
-let  playerTurn = false;
+let  playerTurn = true;
 let end = false;
 
 // Track X player game state
@@ -109,6 +109,8 @@ function endGame(winCon) {
 
 //Reset  game to inital state
 function reset() {
+
+    playerTurn = true;
     document.getElementById('turn').innerHTML = "O TURN";
     document.getElementById('b1').style.display = 'none';
     const col = document.getElementsByClassName('col');
@@ -135,14 +137,14 @@ function clickHandler(select) {
     }
 
     if (playerTurn == true) {
-        select.innerHTML = "X";
+        select.innerHTML = "O";
         x[select.dataset.block] = 1
-        document.getElementById('turn').innerHTML = "O TURN";
+        document.getElementById('turn').innerHTML = "X TURN";
         playerTurn = false;
     } else {
-        select.innerHTML = "O";
+        select.innerHTML = "X";
         o[select.dataset.block] = 1
-        document.getElementById('turn').innerHTML = "X TURN";
+        document.getElementById('turn').innerHTML = "O TURN";
         playerTurn = true;
     }
 
