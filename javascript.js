@@ -88,6 +88,9 @@ function checkWin() {
 function endGame(winCon) {
     const col = document.getElementsByClassName('col');
 
+    document.getElementById('b1').onclick = reset;
+    document.getElementById('b1').classList.toggle('animation');
+
     if (end == true) {
         for(let i=0; i<col.length; i++) {
             col[i].onclick = null;
@@ -102,8 +105,19 @@ function endGame(winCon) {
         return
     }
 
+    
+    //Winning animation
     for (let i=0; i<3; i++) {
-        col[winCon[i]].style.backgroundColor = "yellow"
+        setTimeout(()=> {
+            col[winCon[i]].style.backgroundColor = "cyan"
+            col[winCon[i]].classList.toggle('win_animation');
+        }, i * 140);
+    }
+
+    for (let i=0; i<3; i++) {
+        setTimeout(()=> {
+            col[winCon[i]].classList.remove('win_animation');
+        }, (i * 100)+340);
     }
 }
 
@@ -112,21 +126,33 @@ function reset() {
 
     playerTurn = true;
     document.getElementById('turn').innerHTML = "O TURN";
-    document.getElementById('b1').style.display = 'none';
+    document.getElementById('b1').onclick = null;
+    document.getElementById('b1').classList.remove('animation');
+
     const col = document.getElementsByClassName('col');
     for (let i=0; i<col.length; i++) {
+
         col[i].innerHTML = ""
         col[i].style.backgroundColor = "white"
-
         col[i].onclick = function() {
             clickHandler(col[i])
         }
+        col[i].classList.remove('animation');
+
     }
 
     for (let i=0; i<9; i++) {
         x[i] = 0
         o[i] = 0
     }
+}
+
+//Animation timer for "Turn" display 
+function text_anim() {
+    setTimeout(()=> {
+        document.getElementById('turn').style.opacity = "1";
+    }, 100);
+    document.getElementById('turn').style.opacity = "0";
 }
 
 // Handle onclick
@@ -138,19 +164,21 @@ function clickHandler(select) {
 
     if (playerTurn == true) {
         select.innerHTML = "O";
-        x[select.dataset.block] = 1
+        select.classList.toggle('animation');
+        x[select.dataset.block] = 1;
+        text_anim();
         document.getElementById('turn').innerHTML = "X TURN";
         playerTurn = false;
     } else {
         select.innerHTML = "X";
+        select.classList.toggle('animation');
         o[select.dataset.block] = 1
+        text_anim();
         document.getElementById('turn').innerHTML = "O TURN";
         playerTurn = true;
     }
-
     checkWin();
 }
-
 
 // Assign onclick to every button
 document.addEventListener('DOMContentLoaded', () => {
@@ -161,7 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
             clickHandler(col[i])
         }
     }
-    document.getElementById('b1').onclick = reset
     
 })
 
