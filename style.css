@@ -2,22 +2,20 @@
 .body {
     background-color: rgb(44, 44, 44);
     font-family: "Comic Sans MS", "Comic Sans", cursive;
-    
 }
   
 .col {
     background-color: white;
     align-items: center;
-    font-size: 10vh;
-    padding: 2vh;
+    font-size: 8vh;
+    padding: 4vh;
     width: 20vw;
-    height: 22vh;
+    height: 24vh;
     border-style: solid;
     font-weight: bold;
     opacity: 0.3;
     transition: opacity 0.75s;
     border-width: 6px;
-
 }
 
 .col.animation {
@@ -34,28 +32,27 @@
   
 #turn {
 
-    margin-bottom: -2vw; 
+    margin-bottom: -4vh; 
     transition: opacity 0.25s;
     font-weight: bold;
-    font-size: 5vh;
+    font-size: 6vh;
     text-align: center;
     color: white;
 }
 
 #button {
-    display: none;
     margin: 0;
-    margin-top: -8vw; 
+    margin-top: -28vh; 
     font-weight: bold;
     text-align: center;
-    font-size:5vh;
+    font-size:6vh;
     background-color: black;
     opacity: 0.0;
     transition: opacity 1.75s;
-    
 }
 
 #button.animation {
+
     opacity: 100;
     color: white;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
@@ -66,15 +63,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30vh;
+    height: 40vh;
 }
 
 .box {
     position: relative;
-    margin: auto;      
-
+    margin: auto;   
+    margin-top: -30px;   
+    height: 100%;
     background-color: black;
-    max-width: 50vw;
+    max-width: 720px;
 
 }
 
