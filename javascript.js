@@ -44,7 +44,7 @@ function checkWin() {
             //If all 3 condition met, end game
             if (j == 2) {
                 document.getElementById('turn').innerHTML = "O WIN";
-                document.getElementById('b1').style.display = 'block';
+                document.getElementById('button').style.display = 'block';
                 endGame(winCon[i]);
                 return true;
             }
@@ -61,7 +61,7 @@ function checkWin() {
             //If all 3 condition met, end game
             if (j == 2) {
                 document.getElementById('turn').innerHTML = "X WIN";
-                document.getElementById('b1').style.display = 'block';
+                document.getElementById('button').style.display = 'block';
                 endGame(winCon[i]);
                 return true;
             }
@@ -77,7 +77,7 @@ function checkWin() {
         }
     }
     document.getElementById('turn').innerHTML = "TIE";
-    document.getElementById('b1').style.display = 'block';
+    document.getElementById('button').style.display = 'block';
     endGame(null);
 
     return true
@@ -88,8 +88,8 @@ function checkWin() {
 function endGame(winCon) {
     const col = document.getElementsByClassName('col');
 
-    document.getElementById('b1').onclick = reset;
-    document.getElementById('b1').classList.toggle('animation');
+    document.getElementById('button').onclick = reset;
+    document.getElementById('button').classList.toggle('animation');
 
     if (end == true) {
         for(let i=0; i<col.length; i++) {
@@ -126,8 +126,9 @@ function reset() {
 
     playerTurn = true;
     document.getElementById('turn').innerHTML = "O TURN";
-    document.getElementById('b1').onclick = null;
-    document.getElementById('b1').classList.remove('animation');
+    document.getElementById('button').onclick = null;
+    
+    document.getElementById('button').classList.remove('animation');
 
     const col = document.getElementsByClassName('col');
     for (let i=0; i<col.length; i++) {
