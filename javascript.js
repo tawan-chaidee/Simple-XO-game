@@ -10,7 +10,7 @@ let x = [
     0,0,0
 ]
 
-// Track X player game state
+// Track O player game state
 let o = [
     0,0,0,
     0,0,0,
@@ -26,7 +26,6 @@ let winCon = [
     [1,4,7],
     [2,4,6],
     [0,3,6],
-    [1,4,7],
     [2,5,8]
 ]
 
@@ -166,14 +165,14 @@ function clickHandler(select) {
     if (playerTurn == true) {
         select.innerHTML = "O";
         select.classList.toggle('animation');
-        x[select.dataset.block] = 1;
+        o[select.dataset.block] = 1;
         text_anim();
         document.getElementById('turn').innerHTML = "X TURN";
         playerTurn = false;
     } else {
         select.innerHTML = "X";
         select.classList.toggle('animation');
-        o[select.dataset.block] = 1
+        x[select.dataset.block] = 1;
         text_anim();
         document.getElementById('turn').innerHTML = "O TURN";
         playerTurn = true;
